@@ -39,12 +39,11 @@ In the desktop app, where `/plugin` does not run: click + next to the prompt box
 ## bang-run
 
 When Claude suggests a command for you to run in the session with the `!` prefix (`` `! gcloud auth login` ``, or a `! ...` line in a code block), a band above the prompt lists it with a Copy button.
-Copy puts the command, without the `!`, on your clipboard.
-To run it in the session, type `!` in the empty prompt and paste; to run it elsewhere, just paste.
+Copy puts the command, with its `!`, on your clipboard: paste it in the empty prompt to run it in the session.
 
-Click Copy, or focus the band (`ctrl+x` then `tab`) and press its key: `c` copies, `x` closes the band.
-With several commands, the next rows copy with `v`, `b`, `n`.
-The band clears when you send your next prompt.
+Click Copy, or press its digit with the prompt empty: `9` copies, `0` closes the band.
+With several commands, the next rows copy with `8`, `7`, `6`, counting down so they never clash with quick-options' numbers.
+The band closes after a copy, or when you send your next prompt.
 
 A mod cannot run a `!` command for you: only typing `!` in the prompt box enters shell mode, so text a mod sends or writes into the box reaches Claude as a message.
 
