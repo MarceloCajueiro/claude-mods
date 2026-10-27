@@ -9,6 +9,11 @@
       "name": "quick-options",
       "source": "./quick-options",
       "description": "Turns Claude's suggested next actions into numbered options you pick by typing the number"
+    },
+    {
+      "name": "bang-run",
+      "source": "./bang-run",
+      "description": "Buttons above the prompt to send or copy the `! command` Claude suggested"
     }
   ]
 }
