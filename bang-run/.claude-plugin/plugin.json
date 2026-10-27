@@ -1,6 +1,6 @@
 {
   "name": "bang-run",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A button above the prompt to copy the `! command` Claude suggested",
   "author": { "name": "Marcelo Cajueiro" },
   "license": "MIT",

@@ -7,8 +7,9 @@ const commands = atom({ plugin: 'bang-run', key: 'commands' } as const, [] as Co
 
 const MAX_COMMANDS = 4
 
-// Letters, so they never clash with the digits other bands (quick-options) use.
-const COPY_KEYS = 'cvbn'
+// A bare digit in the empty prompt presses a band Button; a letter needs the band focused.
+// Counting down from 9 keeps clear of quick-options, which numbers from 1.
+const COPY_KEYS = '9876'
 
 // `! cmd` inside inline code, or a line starting with `! ` inside a fenced block.
 export function extract(answer: string): Commands {
@@ -53,8 +54,9 @@ export const register: Register = on => {
     const below = await next(e)
 
     const copy = async (cmd: string, surface: typeof e.surface) => {
-      const result = await $.ui.copy({ text: cmd, surface })
-      $.ui.toast(result.isCopied ? `Copied: ${cmd}` : `Not copied (${result.reason})`)
+      const result = await $.ui.copy({ text: `!${cmd}`, surface })
+      $.ui.toast(result.isCopied ? `Copied: !${cmd}` : `Not copied (${result.reason})`)
+      if (result.isCopied) await update($, commands, () => [])
     }
 
     return (
@@ -71,7 +73,7 @@ export const register: Register = on => {
             <Text>  ! {cmd}</Text>
           </Box>
         ))}
-        <Button key="dismiss" role="dismiss" plain dimColor hotkey="x" label="Close" onPress={() => update($, commands, () => [])} />
+        <Button key="dismiss" role="dismiss" plain dimColor hotkey="0" label="Close" onPress={() => update($, commands, () => [])} />
         {below}
       </Box>
     )
