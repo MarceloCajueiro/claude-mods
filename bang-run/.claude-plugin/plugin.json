@@ -1,7 +1,7 @@
 {
   "name": "bang-run",
-  "version": "0.1.0",
-  "description": "Buttons above the prompt to send or copy the `! command` Claude suggested",
+  "version": "0.2.0",
+  "description": "A button above the prompt to copy the `! command` Claude suggested",
   "author": { "name": "Marcelo Cajueiro" },
   "license": "MIT",
   "types": "./types/index.d.ts"

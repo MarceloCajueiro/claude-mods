@@ -8,7 +8,6 @@ const commands = atom({ plugin: 'bang-run', key: 'commands' } as const, [] as Co
 const MAX_COMMANDS = 4
 
 // Letters, so they never clash with the digits other bands (quick-options) use.
-const SEND_KEYS = 'erty'
 const COPY_KEYS = 'cvbn'
 
 // `! cmd` inside inline code, or a line starting with `! ` inside a fenced block.
@@ -53,10 +52,6 @@ export const register: Register = on => {
     const { Box, Button, Text } = $.ui.resolve(e)
     const below = await next(e)
 
-    const send = async (cmd: string) => {
-      await update($, commands, () => [])
-      await $.prompt.submit({ text: `!${cmd}`, asUser: true })
-    }
     const copy = async (cmd: string, surface: typeof e.surface) => {
       const result = await $.ui.copy({ text: cmd, surface })
       $.ui.toast(result.isCopied ? `Copied: ${cmd}` : `Not copied (${result.reason})`)
@@ -66,8 +61,6 @@ export const register: Register = on => {
       <Box flexDirection="column">
         {current.map((cmd, i) => (
           <Box key={`row-${i}`}>
-            <Button key={`send-${i}`} plain hotkey={SEND_KEYS[i]} label="Send" onPress={() => send(cmd)} />
-            <Text>  </Text>
             <Button
               key={`copy-${i}`}
               plain

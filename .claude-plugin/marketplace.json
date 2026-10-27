@@ -13,7 +13,7 @@
     {
       "name": "bang-run",
       "source": "./bang-run",
-      "description": "Buttons above the prompt to send or copy the `! command` Claude suggested"
+      "description": "A button above the prompt to copy the `! command` Claude suggested"
     }
   ]
 }
