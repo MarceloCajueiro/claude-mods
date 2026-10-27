@@ -1,6 +1,9 @@
 {
   "name": "claude-mods",
-  "owner": { "name": "Marcelo Cajueiro" },
+  "description": "Marcelo Cajueiro's mods for Claude Code",
+  "owner": {
+    "name": "Marcelo Cajueiro"
+  },
   "plugins": [
     {
       "name": "quick-options",
