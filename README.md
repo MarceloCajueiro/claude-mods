@@ -36,6 +36,28 @@ claude plugin install quick-options --marketplace MarceloCajueiro/claude-mods
 
 In the desktop app, where `/plugin` does not run: click + next to the prompt box, then Plugins, Add marketplace with `MarceloCajueiro/claude-mods`, then Add plugin.
 
+## bang-run
+
+When Claude suggests a command for you to run in the session with the `!` prefix (`` `! gcloud auth login` ``, or a `! ...` line in a code block), a band above the prompt lists it with two actions.
+Send runs `!command` in the session, as if you had typed it.
+Copy puts the command, without the `!`, on your clipboard, to run it somewhere else.
+
+Click the action, or focus the band (`ctrl+x` then `tab`) and press its key: `e` sends, `c` copies, `x` closes the band.
+With several commands, the next rows send with `r`, `t`, `y` and copy with `v`, `b`, `n`.
+The band clears when you send your next prompt.
+
+### Install
+
+```
+/plugin install bang-run --marketplace MarceloCajueiro/claude-mods
+```
+
+From a shell:
+
+```
+claude plugin install bang-run --marketplace MarceloCajueiro/claude-mods
+```
+
 ## License
 
 MIT
