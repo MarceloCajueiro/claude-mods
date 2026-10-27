@@ -1,0 +1,11 @@
+{
+  "name": "claude-mods",
+  "owner": { "name": "Marcelo Cajueiro" },
+  "plugins": [
+    {
+      "name": "quick-options",
+      "source": "./quick-options",
+      "description": "Turns Claude's suggested next actions into numbered options you pick by typing the number"
+    }
+  ]
+}
