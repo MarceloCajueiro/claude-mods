@@ -5,7 +5,8 @@ Each folder is one mod, and this repository is a marketplace that lists all of t
 
 ## quick-options
 
-When Claude ends a reply with a suggestion that waits on you (a command to run, an action to approve, a choice between paths), it closes the message with an `Options:` line and a numbered list.
+When Claude's reply asks you something it cannot continue without (approve an action, pick one of the paths it laid out, confirm you finished a step), it closes the message with an `Options:` line and a numbered list.
+Status updates, reports of finished work, answers and loose next-step suggestions get no list.
 A band above the prompt shows those options.
 Type the number and press Enter, and the option's text is sent as your message, so you never retype what Claude suggested.
 You can also click an option in the band.

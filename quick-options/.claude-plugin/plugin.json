@@ -1,7 +1,7 @@
 {
   "name": "quick-options",
-  "version": "0.1.0",
-  "description": "Turns Claude's suggested next actions into numbered options you pick by typing the number",
+  "version": "0.1.1",
+  "description": "Turns the questions Claude asks you into numbered options you pick by typing the number",
   "author": { "name": "Marcelo Cajueiro" },
   "license": "MIT",
   "types": "./types/index.d.ts"

@@ -8,10 +8,11 @@ const options = atom({ plugin: 'quick-options', key: 'options' } as const, [] as
 const MAX_OPTIONS = 9
 
 const INSTRUCTIONS = [
-  'When you end a reply proposing something that waits on the user (a command for them to run, an action for them to approve, a choice between paths), close the message with a line reading exactly `Options:` followed by a numbered list (`1.`, `2.`, ...) of at most 5 items.',
+  'Most replies need no `Options:` block. Add one only when this reply needs an answer from the user before you can go on: approval for an action you offer to take but will not take without their go-ahead (sending a message, changing their system, anything hard to undo), a pick between paths this reply lays out, or confirmation that they finished a step you depend on.',
+  'Never add it to a status update, a report of finished work, an answer to a question, or a reply that only suggests a next step the user can take on their own. Do not offer a menu of optional follow-up work, and do not repeat a decision you already offered in an earlier turn that has not changed.',
+  'When you add it, close the message with a line reading exactly `Options:` followed by a numbered list (`1.`, `2.`, ...) of at most 5 items, each one an answer to what this reply asks. If you cannot point to that ask in this reply, leave the block out; when unsure, leave it out.',
   "Write each item as the reply the user would send to pick it, short and self-contained, in the conversation's language, since the item text is sent verbatim as the user's message (e.g. `1. Go ahead and run \`npm test\``, `2. No, just show me the diff`).",
   'The user picks an option by typing its number; a bare digit right after such a list means that option.',
-  'Do not write an `Options:` line in any other situation.',
 ].join('\n')
 
 // Matches `Options:` and its bold or heading forms; `Opções:` too.
